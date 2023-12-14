@@ -1,0 +1,79 @@
+body{
+    background-image: url(./background.png);
+    background-size:cover;
+    /* background-position:center; */
+    /* background-repeat:no-repeat; */
+    margin:0;
+}
+
+
+#output-container {
+    position: relative;
+}
+
+.bounding-box {
+    position: absolute;
+    border: 2px solid red;
+    pointer-events: none;
+}
+
+.highlight {
+    position: absolute;
+    border: 5px solid yellow;
+    pointer-events: none;
+}
+
+#uploadButton{
+    margin-top:15px;
+}
+
+#uploadFileContainer{
+    background-color:rgb(238, 236, 236);
+    height: 75px;
+    margin-top: 500px;
+    margin-left:200px;
+    margin-right:200px;
+    text-align:center;
+    padding-top:20px;
+    border-radius:5px;
+}
+
+#boundingBoxInfo{
+    display:flex;
+    /* background-color:blueviolet; */
+    margin-left:auto;
+    margin-right:auto;
+    width:min-content;
+    margin:10px;
+}
+
+#infoContainer{
+    background-image: url(./small.png);
+    background-size:cover;
+    padding-top:100px;
+    margin-bottom:15px;
+    text-align:center;
+    width:100%;
+}
+
+#resultContainer{
+    text-align:center;
+    max-width:500px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#annotatedImage{
+    width: 100%;
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.colorBox{
+    width:150px;
+    height:100px;
+    margin:5px;
+    padding-top:20px;
+}
+
