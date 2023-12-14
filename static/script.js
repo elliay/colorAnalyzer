@@ -59,7 +59,6 @@ function highlightBoundingBox(boxInfo) {
     boundingBox.style.top = `${y}px`;
     boundingBox.style.width = `${w}px`;
     boundingBox.style.height = `${h}px`;
-    // boundingBox.style.backgroundColor = mode_color;
 
     document.body.appendChild(boundingBox);
 }

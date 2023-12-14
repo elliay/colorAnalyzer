@@ -33,7 +33,6 @@ rgb_values = [
 ]
 
 # Convert RGB values to OpenCV format (BGR)
-# bgr_values = np.array(rgb_values, dtype=np.uint8)
 bgr_values = np.array([[color[2], color[1], color[0]] for color in rgb_values], dtype=np.float32)
 
 print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
@@ -53,12 +52,6 @@ kmeans_attempts = 10
 print("kmeans_attempts:", kmeans_attempts)
 
 kmeans = cv2.kmeans(bgr_values, 5, None, criteria=kmeans_criteria, attempts=kmeans_attempts, flags=kmeans_flags)
-
-
-# Perform KMeans clustering to group similar colors
-# kmeans = cv2.kmeans(bgr_values, 5, None, criteria=(cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 100, 0.2), attempts=10, flags=cv2.KMEANS_RANDOM_CENTERS)
-
-# Get cluster centers
 centers = kmeans[2]
 
 # Create an annotated image
@@ -74,7 +67,7 @@ image_area = image_width * image_height
 
 # Draw bounding boxes around clusters
 for center in centers:
-    center_rgb = [int(center[2]), int(center[1]), int(center[0])]  # Convert BGR to RGB
+    center_rgb = [int(center[2]), int(center[1]), int(center[0])]
     lower_bound = np.array([max(0, c - 20) for c in center_rgb], dtype=np.uint8)
     upper_bound = np.array([min(255, c + 20) for c in center_rgb], dtype=np.uint8)
     mask = cv2.inRange(image_cv2, lower_bound, upper_bound)
@@ -97,5 +90,4 @@ for center in centers:
             print("Mode color RGB values:", mode_color)
 
 # Display the annotated image
-# pil_image = Image.fromarray(cv2.cvtColor(image_cv2, cv2.COLOR_BGR2RGB))
 pil_image.show()
