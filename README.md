@@ -5,3 +5,5 @@ Sources:
 This video was really helpful for me to get started and learn how to use the API: https://www.youtube.com/watch?v=ddWRX2Y71RU
 Based on the starter code from that video, I wrote the rest of the code with some help from ChatGPT for the parts I didn't know how to do on my own, like the KMeans clustering and the OpenCV stuff.
 I first wrote the color-detection.py file to make sure that my image-processing code worked, and then I later used that code in my server.py when I wrote the frontend and backend parts of the application.
+
+Video Demo: https://youtu.be/9uZF3zb1I90
